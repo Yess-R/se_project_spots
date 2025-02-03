@@ -20,6 +20,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
+  color: #212121;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -31,7 +32,13 @@
   height: 20px;
   border: none;
   background-color: transparent;
+  color: #212121;
   opacity: 40%;
+}
+
+.card__like-btn:hover {
+  opacity: 100%;
+  border: 2px;
 }
 
 @media screen and (max-width: 627px) {

@@ -31,6 +31,8 @@
 
 .profile__description {
   margin: 0;
+  color: #212121;
+  opacity: 70%;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
@@ -45,11 +47,25 @@
 .profile__edit-btn {
   margin-top: auto;
   background-color: transparent;
+  color: #212121;
+  opacity: 80%;
   border: none;
   align-self: flex-start;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  cursor: pointer;
+}
+
+.profile__edit-btn::before {
+  content: url(../images/pencil.svg);
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.profile__edit-btn:hover {
+  opacity: 100%;
 }
 
 .profile__add-btn {
@@ -63,6 +79,18 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  cursor: pointer;
+}
+
+.profile__add-btn::before {
+  content: url(../images/plus.svg);
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.profile__add-btn:hover {
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
