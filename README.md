@@ -26,3 +26,5 @@ The footer is placed at the bottom of the page with copyright symbol and title o
 This webpage is deployed to GitHub Pages
 
 -Deployment link: https://yess-r.github.io/se_project_spots/
+
+-Video link: https://drive.google.com/file/d/1UmcWrEBBaaXtzRbAUrFfAHOC7VtwApbc/view?usp=sharing
