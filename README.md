@@ -27,4 +27,4 @@ This webpage is deployed to GitHub Pages
 
 -Deployment link: https://yess-r.github.io/se_project_spots/
 
--Video link: https://drive.google.com/file/d/1UmcWrEBBaaXtzRbAUrFfAHOC7VtwApbc/view?usp=sharing
+-Video link: https://drive.google.com/file/d/1UmcWrEBBaaXtzRbAUrFfAHOC7VtwApbc/view?usp=drive_link
