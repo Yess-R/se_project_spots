@@ -29,6 +29,8 @@
 }
 .card__like-btn {
   background-image: url(../images/like.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
   margin: 12px 0 0;
   width: 23px;
   height: 20px;
