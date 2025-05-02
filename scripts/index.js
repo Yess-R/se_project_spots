@@ -78,7 +78,7 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardElement.remove();
-    cardelement = null;
+    cardElement = null;
   });
 
   cardImageEl.addEventListener("click", () => {
@@ -112,6 +112,7 @@ function handleAddCardSubmit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  evt.inputValues.reset();
 
   closeModal(cardModal);
 }
