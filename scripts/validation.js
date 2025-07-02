@@ -21,14 +21,9 @@ const hideInputError = (formEl, inputEl, config) => {
 
 const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
-    showInputError(
-      formEl,
-      inputEl,
-      inputEl.validationMessage,
-      config.inputErrorClass
-    );
+    showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
-    hideInputError(formEl, inputEl, config.inputErrorClass);
+    hideInputError(formEl, inputEl, config);
   }
 };
 

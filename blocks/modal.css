@@ -19,7 +19,7 @@
   padding: 0 16px;
 }
 
-.modal_opened {
+.modal__opened {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s linear;

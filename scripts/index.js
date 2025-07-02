@@ -62,7 +62,7 @@ const cardTemplate = document
 const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.cloneNode(true);
+  let cardElement = cardTemplate.cloneNode(true);
 
   const cardNameEl = cardElement.querySelector(".card__title");
 
@@ -93,12 +93,23 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
+
+function closeModalOnEsc(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal__opened");
+    closeModal(modal);
+  }
 }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
+function closeModalOnOverlay(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
 }
 
 function handleEditFormSubmit(evt) {
@@ -131,20 +142,8 @@ profileEditButton.addEventListener("click", () => {
   openModal(editModal);
 });
 
-editModalCloseBtn.addEventListener("click", () => {
-  closeModal(editModal);
-});
-
-previewModalCloseBtn.addEventListener("click", () => {
-  closeModal(previewModal);
-});
-
 cardModalButton.addEventListener("click", () => {
   openModal(cardModal);
-});
-
-cardModalCloseBtn.addEventListener("click", () => {
-  closeModal(cardModal);
 });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
@@ -155,3 +154,14 @@ initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
+
+function openModal(modal) {
+  modal.classList.add("modal__opened");
+  document.addEventListener("keydown", closeModalOnEsc);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal__opened");
+  document.removeEventListener("keydown", closeModalOnEsc);
+  modal.addEventListener("click", closeModalOnOverlay);
+}
