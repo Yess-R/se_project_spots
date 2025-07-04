@@ -150,9 +150,12 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
-initialCards.forEach((item) => {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
+initialCards.forEach((cardData) => {
+  function renderCard(cardData, method = "append") {
+    const cardElement = getCardElement(cardData);
+    cardsList[method](cardElement);
+  }
+  renderCard(cardData);
 });
 
 function openModal(modal) {
